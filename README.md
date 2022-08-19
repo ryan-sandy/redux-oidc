@@ -1,5 +1,7 @@
 # redux-oidc
-[![Build Status](https://travis-ci.org/maxmantz/redux-oidc.svg?branch=master)](https://travis-ci.org/maxmantz/redux-oidc)
+[![Build Status](https://travis-ci.org/drod21/redux-oidc.svg?branch=master)](https://travis-ci.org/drod21/redux-oidc)
+
+This is a successor for redux-oidc, but with a different name. Eventually, will add helper hooks, but the intent is to bring this application up to date with React 18 and hooks.
 
 A package for managing OpenID-Connect authentication in ReactJS / Redux apps. It wraps the popular oidc-client library to redux actions and reducers.
 
