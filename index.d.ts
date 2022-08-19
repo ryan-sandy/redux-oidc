@@ -14,7 +14,7 @@ declare module "redux-oidc" {
   }
 
   export interface UserState {
-    readonly user?: User;
+    readonly user?: User | null;
     readonly isLoadingUser: boolean;
   }
 
@@ -43,6 +43,7 @@ declare module "redux-oidc" {
   export interface OidcProviderProps<TSTate> {
     readonly userManager: UserManager;
     readonly store: Store<TSTate>;
+		readonly children?: React.ReactNode;
   }
 
   export class OidcProvider<TState> extends React.Component<
