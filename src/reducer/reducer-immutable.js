@@ -8,7 +8,7 @@ import {
 } from '../constants';
 
 /**
- * 
+ *
  * @param {object} immutable - The immutableJS library
  */
 export default function createImmutableReducer(immutable) {
@@ -16,31 +16,26 @@ export default function createImmutableReducer(immutable) {
 
   try {
     const { fromJS, Seq } = immutable;
-  
+
       const fromJSGreedy = (js) => {
-        return typeof js !== 'object' || js === null ? js :
-          Array.isArray(js) ?
-          Seq(js).map(fromJSGreedy).toList() :
-          Seq(js).map(fromJSGreedy).toMap();
+				if(typeof js !== 'object' || js === null)
+					return js;
+
+				if(Array.isArray(js))
+					return Seq(js).map(fromJSGreedy).toList();
+
+				return Seq(js).map(fromJSGreedy).toMap();
       }
-  
+
       const initialState = fromJS({
         user: null,
         isLoadingUser: false
       });
-  
+
       reducer = (state = initialState, action) => {
         switch (action.type) {
           case USER_EXPIRED:
-            return fromJS({
-              user: null,
-              isLoadingUser: false
-            });
           case SILENT_RENEW_ERROR:
-            return fromJS({
-              user: null,
-              isLoadingUser: false
-            });
           case SESSION_TERMINATED:
           case USER_SIGNED_OUT:
             return fromJS({
