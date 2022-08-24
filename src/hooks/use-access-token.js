@@ -10,11 +10,12 @@ export function useAccessToken() {
 		// 				try {
 		// 						const accessToken = await ;
 		// 						setAccessToken(accessToken);
-		// 						setIsLoading(false);
 		// 				} catch (error) {
 		// 						setError(error);
-		// 						setIsLoading(false);
+		// 				} finally {
+		//					setIsLoading(false);
 		// 				}
+		}
 		// 		}
 		// 		getAccessToken();
 		// } , []);
