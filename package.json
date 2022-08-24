@@ -14,9 +14,6 @@
     "type": "git",
     "url": "https://github.com/drod21/redux-oidc.git"
   },
-	"publishConfig": {
-		"registry":"https://npm.pkg.github.com"
-	},
   "bugs": {
     "url": "https://github.com/drod21/redux-oidc/issues",
     "email": "drod2169@gmail.com"
