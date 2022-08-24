@@ -1,25 +1,36 @@
-import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { userExpired, userFound, silentRenewError, sessionTerminated, userExpiring, userSignedOut } from './actions';
 
-const OidcProvider = ({ children, userManager, store}) => {
+
+
+const OidcProvider = ({ children, userManager, store }) => {
 	// event callback when the user has been loaded (on silent renew or redirect)
-	const onUserLoaded = (user) => this.props.store.dispatch(userFound(user));
+	const onUserLoaded = (user) =>{ store.dispatch(userFound(user))};
 
 	// event callback when silent renew errored
-  const onSilentRenewError = (error) => store.dispatch(silentRenewError(error));
+  const onSilentRenewError = (error) => {
+		store.dispatch(silentRenewError(error))
+	};
 
   // event callback when the access token expired
-  const onAccessTokenExpired = () => store.dispatch(userExpired());
+  const onAccessTokenExpired = () => {
+		store.dispatch(userExpired())
+	};
 
   // event callback when the user is logged out
-  const onUserUnloaded = () => store.dispatch(sessionTerminated());
+  const onUserUnloaded = () => {
+		store.dispatch(sessionTerminated())
+	};
 
   // event callback when the user is expiring
-  const onAccessTokenExpiring = () => store.dispatch(userExpiring());
+  const onAccessTokenExpiring = () => {
+		store.dispatch(userExpiring())
+	};
 
   // event callback when the user is signed out
-  const onUserSignedOut = () => store.dispatch(userSignedOut());
+  const onUserSignedOut = () => {
+		store.dispatch(userSignedOut())
+	};
 
 	useEffect(() => {
 		userManager.events.addUserLoaded(onUserLoaded);
@@ -41,18 +52,5 @@ const OidcProvider = ({ children, userManager, store}) => {
 
 	return React.Children.only(children);
 }
-
-OidcProvider.propTypes = {
-		// child components to render
-		children: PropTypes.node,
-
-    // the user manager from oidc-client-ts
-    userManager: PropTypes.object.isRequired,
-
-    // the redux-store
-    store: PropTypes.object.isRequired,
-};
-
-
 
 export default OidcProvider;

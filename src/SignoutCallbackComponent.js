@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const SignoutCallbackComponent = ({ children, userManager, successCallback, errorCallback }) => {
 	const onRedirectSuccess = (user) => successCallback(user);
