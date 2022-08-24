@@ -3,28 +3,28 @@
 
 This is a successor for redux-oidc, but with a different name. Eventually, will add helper hooks, but the intent is to bring this application up to date with React 18 and hooks.
 
-A package for managing OpenID-Connect authentication in ReactJS / Redux apps. It wraps the popular oidc-client library to redux actions and reducers.
+A package for managing OpenID-Connect authentication in ReactJS / Redux apps. It wraps the popular oidc-client-ts library to redux actions and reducers.
 
 ### Description
 
 This package handles [OpenID-Connect](http://openid.net/connect/) authentication in [redux](http://redux.js.org/) apps. It enables redux apps to authenticate with an external OIDC authentication provider and handles the actions of the OpenID [implicit flow](http://openid.net/specs/openid-connect-implicit-1_0.html) or [authorization code flow](https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type).
 
-It uses the oidc-client-js library to manage OpenID Connect functionality.
+It uses the oidc-client-ts library to manage OpenID Connect functionality.
 
 It contains the following parts:
 - *CallbackComponent*: A react component processing the signin callback from the OpenID-Connect provider,
 - *SignoutCallbackComponent*: A react component processing the signout callback from the OpenID-Connect provider,
 - *reducers & actions*: reducers and actions to handle OIDC events,
-- *helpers*: create helpers to manage the oidc-client-js library
+- *helpers*: create helpers to manage the oidc-client-ts library
 
 ### Installation
 `npm install --save redux-oidc`
 
 #### Peer dependencies
-This package wraps [oidc-client-js](https://github.com/IdentityModel/oidc-client-js) to use with ReactJS / Redux apps.
+This package wraps [oidc-client-ts](https://github.com/authts/oidc-client-ts) to use with ReactJS / Redux apps.
 Install oidc-client like this:
 
-`npm install --save oidc-client`
+`npm install --save oidc-client-ts`
 
 In addition there is a peer dependency for [immutable.js](https://facebook.github.io/immutable-js/), if you want to use it.
 

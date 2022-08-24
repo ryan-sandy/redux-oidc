@@ -46,7 +46,7 @@ OidcProvider.propTypes = {
 		// child components to render
 		children: PropTypes.node,
 
-    // the user manager from oidc-client
+    // the user manager from oidc-client-ts
     userManager: PropTypes.object.isRequired,
 
     // the redux-store

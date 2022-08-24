@@ -10,13 +10,13 @@ Usage:
 import { createUserManager } from 'redux-oidc';
 
 const settings = {
-  // the user manager settings for oidc-client
+  // the user manager settings for oidc-client-ts
 };
 
 const userManager = createUserManager(settings);
 ```
 Arguments:
-- settings: the userManager configuration object. See the [oidc-client wiki](https://github.com/IdentityModel/oidc-client-js/wiki#configuration) for further information.
+- settings: the userManager configuration object. See the [oidc-client-ts wiki](https://github.com/authts/oidc-client-ts) for further information.
 
 Returns:
 A userManager instance.
