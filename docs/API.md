@@ -7,7 +7,7 @@ A shorthand for creating a userManager instance.
 
 Usage:
 ```
-import { createUserManager } from 'redux-oidc';
+import { createUserManager } from 'redux-oidc-hooks';
 
 const settings = {
   // the user manager settings for oidc-client-ts
@@ -26,7 +26,7 @@ Loads potentially existing user data into the redux store, thus eliminating a ne
 
 Usage:
 ```
-import { loadUser } from 'redux-oidc';
+import { loadUser } from 'redux-oidc-hooks';
 
 // this should be placed directly after you configure your redux-store
 
@@ -43,7 +43,7 @@ Processes the silent renewal of tokens.
 Usage:
 ```
 // in your silent_renew.html
-import { processSilentRenew } from 'redux-oidc';
+import { processSilentRenew } from 'redux-oidc-hooks';
 
 processSilentRenew();
 ```
@@ -54,7 +54,7 @@ Arguments: none
 There are two reducers which can be registered with your redux-store:
 
 ##### Standard reducer
-`import { reducer } from 'redux-oidc';`
+`import { reducer } from 'redux-oidc-hooks';`
 
 or
 
@@ -62,7 +62,7 @@ or
 This reducer is to be used for configurations with immutable.js.
 ```
 import immutable from 'immutable';
-import { createImmutableReducer } from 'redux-oidc';
+import { createImmutableReducer } from 'redux-oidc-hooks';
 
 const reducer = createImmutableReducer(immutable);
 ```
@@ -75,7 +75,7 @@ The component to handle the token callback from the authentication server.
 
 Usage:
 ```
-import { CallbackComponent } from 'redux-oidc';
+import { CallbackComponent } from 'redux-oidc-hooks';
 
  const successCallback = (user) => {
    console.log(user);
@@ -114,7 +114,7 @@ This components sets up the userManager event handlers to dispatch the required 
 Usage:
 ```
 import { Provider } from 'react-redux';
-import { OidcProvider } from 'redux-oidc';
+import { OidcProvider } from 'redux-oidc-hooks';
 
 // at the root of your application
 
@@ -141,7 +141,7 @@ Verifies the existing user object on every action dispatch.
 
 Usage:
 ```
-import { createOidcMiddleware } from 'redux-oidc';
+import { createOidcMiddleware } from 'redux-oidc-hooks';
 
 const middleware = createOidcMiddleware(userManager);
 
