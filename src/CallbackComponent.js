@@ -1,21 +1,32 @@
 import PropTypes from 'prop-types';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const CallbackComponent = ({ children, userManager, successCallback, errorCallback }) => {
-	const onRedirectSuccess = (user) => successCallback(user);
+	let shouldCancel = useRef(false);
+	useEffect(() => {
+		const onRedirectCallback = async () => {
+			try {
+				const user = await userManager.signinRedirectCallback();
+				if (user) {
+					successCallback(user);
+				} else {
+					throw new Error('User is not authenticated');
+				}
+			} catch (error) {
+				if (!errorCallback) {
+					throw new Error(`Error handling redirect callback: ${error.message}`);
+				}
 
-	const onRedirectError = (error) => {
-		if (!errorCallback) {
-      throw new Error(`Error handling redirect callback: ${error.message}`);
+				errorCallback(error);
+			}
+		}
+		if (!shouldCancel.current) {
+			onRedirectCallback();
 		}
 
-		errorCallback(error);
-  };
-
-	useEffect(() => {
-		userManager.signinRedirectCallback()
-      .then(onRedirectSuccess)
-      .catch(onRedirectError);
+		return () => {
+			shouldCancel.current = true;
+		}
 	}, []);
 
 	return React.Children.only(children);
