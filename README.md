@@ -1,7 +1,5 @@
 # redux-oidc
-[![Build Status](https://travis-ci.org/drod21/redux-oidc.svg?branch=master)](https://travis-ci.org/drod21/redux-oidc)
-
-This is a successor for redux-oidc, but with a different name. Eventually, will add helper hooks, but the intent is to bring this application up to date with React 18 and hooks.
+This is a fork for redux-oidc, but should be compatible with React18.
 
 A package for managing OpenID-Connect authentication in ReactJS / Redux apps. It wraps the popular oidc-client-ts library to redux actions and reducers.
 
@@ -18,7 +16,7 @@ It contains the following parts:
 - *helpers*: create helpers to manage the oidc-client-ts library
 
 ### Installation
-`npm install --save redux-oidc`
+`npm install --save redux-oidc-2`
 
 #### Peer dependencies
 This package wraps [oidc-client-ts](https://github.com/authts/oidc-client-ts) to use with ReactJS / Redux apps.

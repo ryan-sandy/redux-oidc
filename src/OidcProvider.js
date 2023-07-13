@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { userExpired, userFound, silentRenewError, sessionTerminated, userExpiring, userSignedOut } from './actions';
 
-
-
 const OidcProvider = ({ children, userManager, store }) => {
 	// event callback when the user has been loaded (on silent renew or redirect)
 	const onUserLoaded = (user) =>{ store.dispatch(userFound(user))};

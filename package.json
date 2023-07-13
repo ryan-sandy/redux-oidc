@@ -1,6 +1,6 @@
 {
-  "name": "redux-oidc-hooks",
-  "version": "1.0.4",
+  "name": "redux-oidc-2",
+  "version": "1.0.0",
   "description": "A package for managing OpenID Connect authentication in redux apps",
   "main": "dist/redux-oidc.js",
   "types": "./index.d.ts",
@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/drod21/redux-oidc.git"
+    "url": "https://github.com/ryan-sandy/redux-oidc.git"
   },
   "bugs": {
-    "url": "https://github.com/drod21/redux-oidc/issues",
-    "email": "drod2169@gmail.com"
+    "url": "https://github.com/ryan-sandy/redux-oidc.git",
+    "email": "ryansandylee@gmail.com"
   },
   "keywords": [
     "oidc",
@@ -26,7 +26,7 @@
     "openid",
     "oauth2"
   ],
-  "author": "Derek Rodriguez",
+  "author": "Ryan Lee",
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^18.0.17",
@@ -51,15 +51,10 @@
     "es6-promise": "^4.2.8",
     "expect": "^1.20.2",
     "file-loader": "^0.9.0",
-<<<<<<< HEAD
+    "immutable": "^4.3.1",
     "jsdom": "^9.12.0",
     "json-loader": "^0.5.7",
     "mocha": "^3.5.3",
-=======
-    "jsdom": "^9.9.1",
-    "json-loader": "^0.5.4",
-    "mocha": "^10.0.0",
->>>>>>> 6ba4c2a (Bump minimist and mocha)
     "mocha-webpack": "^0.7.0",
     "node-storage-shim": "^1.0.1",
     "sinon": "^1.17.7",
