@@ -1,4 +1,4 @@
-declare module "redux-oidc-hooks" {
+declare module "redux-oidc-2" {
   import { SignoutResponse, UserManager, UserManagerSettings, User } from "oidc-client-ts";
   import { Map, fromJS } from "immutable";
   import { Middleware, Store } from "redux";
