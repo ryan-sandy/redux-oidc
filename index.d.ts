@@ -23,6 +23,7 @@ declare module "redux-oidc-2" {
     readonly successCallback: (user: User) => void;
     readonly errorCallback?: (error: Error) => void;
     readonly route?: string;
+    readonly children?: React.ReactNode;
   }
 
   export class CallbackComponent extends React.Component<
@@ -34,6 +35,7 @@ declare module "redux-oidc-2" {
     readonly successCallback: (response: SignoutResponse) => void;
     readonly errorCallback?: (error: Error) => void;
     readonly route?: string;
+    readonly children?: React.ReactNode;
   }
 
   export class SignoutCallbackComponent extends React.Component<
